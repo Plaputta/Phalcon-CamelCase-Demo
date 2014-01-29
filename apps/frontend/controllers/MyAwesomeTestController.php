@@ -21,5 +21,16 @@ class MyAwesomeTestController extends Controller
        $this->view->setVar('date', date('Y-m-d'));
     }
 
+    /**
+     * @Get("/forward-test")
+     */
+    public function forwardTestAction()
+    {
+        $this->dispatcher->forward(array(
+            'controller' => 'MyAwesomeTest',
+            'action' => 'mySuperTest'
+        ));
+    }
+
 }
 
